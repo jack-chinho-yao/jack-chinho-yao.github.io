@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Your Name] — DevSecOps Engineer</title>
+    <title>Jack Yao — Full-Stack Engineer</title>
 
     <!-- Google Fonts：把 JetBrains Mono(等寬) 和 Inter(內文) 載進來。
          沒有這段，style.css 裡的 font-mono / font-sans 會掉到系統後備字型 -->
@@ -34,7 +34,7 @@
         <p class="mt-3 font-mono text-lg text-accent">Full-Stack Engineer</p>
         <!-- 一句話標語 -->
         <p class="mt-4 max-w-xl text-body">
-          I build practical tools that turn real problems into simple, reliable solutions.
+          I build scalable backend services and clean APIs — turning complex requirements into fast, reliable systems.
         </p>
       </section>
 
@@ -42,9 +42,11 @@
       <section class="border-t border-border py-12">
         <h2 class="font-mono text-sm text-accent-cyan">&gt;_ about</h2>
         <p class="mt-4 leading-relaxed text-body">
-          I'm a Full-Stack Engineer with 4+ years of experience building high-performance
-          enterprise applications — from backend services to the interfaces on top of them.
-          I care about clean architecture, reliability, and shipping software people actually use.
+          I'm a Software Engineer with 4+ years of experience building and deploying
+          enterprise-level web applications, scalable backend services, and RESTful APIs.
+          I've cut query response times by 90% and processed 40M+ records within strict SLAs,
+          working across Java, Spring Boot, SQL optimization, and AWS. Based in Calgary, AB
+          and available immediately.
         </p>
       </section>
 
@@ -58,21 +60,57 @@
 
           <div class="rounded-lg border border-border bg-surface p-5">
             <h3 class="font-mono text-heading">Languages</h3>
-            <p class="mt-2 text-sm text-muted">Java, JavaScript</p>
-          </div>
-          <div class="rounded-lg border border-border bg-surface p-5">
-            <h3 class="font-mono text-heading">Cloud</h3>
-            <p class="mt-2 text-sm text-muted">AWS</p>
+            <p class="mt-2 text-sm text-muted">Java, JavaScript/TypeScript, SQL, Python</p>
           </div>
 
           <div class="rounded-lg border border-border bg-surface p-5">
-            <h3 class="font-mono text-heading">Security</h3>
-            <p class="mt-2 text-sm text-muted">[SAST, DAST, Trivy ...]</p>
+            <h3 class="font-mono text-heading">Frameworks</h3>
+            <p class="mt-2 text-sm text-muted">Spring Boot, React.js, Hibernate, MyBatis, Spring Batch</p>
           </div>
 
           <div class="rounded-lg border border-border bg-surface p-5">
-            <h3 class="font-mono text-heading">CI/CD</h3>
-            <p class="mt-2 text-sm text-muted">[GitHub Actions, GitLab CI ...]</p>
+            <h3 class="font-mono text-heading">Databases</h3>
+            <p class="mt-2 text-sm text-muted">Oracle, MySQL, PostgreSQL, MongoDB</p>
+          </div>
+
+          <div class="rounded-lg border border-border bg-surface p-5">
+            <h3 class="font-mono text-heading">Cloud &amp; DevOps</h3>
+            <p class="mt-2 text-sm text-muted">AWS, Docker, Jenkins CI/CD, Nginx</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3.5 EXPERIENCE ============ -->
+      <section class="border-t border-border py-12">
+        <h2 class="font-mono text-sm text-accent-cyan">&gt;_ experience</h2>
+        <div class="mt-6 space-y-8">
+
+          <!-- 一份工作經歷 -->
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-mono text-heading">Java Backend Engineer</h3>
+              <span class="font-mono text-sm text-muted">Feb 2022 – Mar 2026</span>
+            </div>
+            <p class="mt-1 font-mono text-sm text-accent">Logic Solutions · Taipei, Taiwan (Remote)</p>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body">
+              <li>Built enterprise SaaS applications with Java &amp; Spring Boot, designing RESTful APIs with clean service boundaries for international clients.</li>
+              <li>Optimized SQL queries and indexing across Oracle and MySQL, achieving a 90% reduction in search response time on large datasets.</li>
+              <li>Architected a multi-tenant SaaS platform with dynamic catalog switching via a MyBatis interceptor and custom TenantContext propagation for non-HTTP contexts.</li>
+              <li>Designed RabbitMQ messaging pipelines for asynchronous inter-service communication, improving reliability under high concurrency.</li>
+              <li>Deployed backend services on AWS EC2 with Jenkins CI/CD, Docker, and Nginx; cut bug rates 30% via SonarQube static analysis.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-mono text-heading">Java Backend Engineer</h3>
+              <span class="font-mono text-sm text-muted">Jul 2021 – Jan 2022</span>
+            </div>
+            <p class="mt-1 font-mono text-sm text-accent">Hyweb Technology · Taiwan</p>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body">
+              <li>Architected a high-throughput Spring Batch system processing 40M+ loyalty-point accounts within a strict 1-hour SLA window.</li>
+              <li>Ensured ACID-compliant, zero-discrepancy balance mutations with idempotent jobs and full restart/recovery capability.</li>
+            </ul>
           </div>
 
         </div>
@@ -95,38 +133,36 @@
 <!--      </section>-->
 
       <!-- ============ 5. PROJECTS ============ -->
-<!--      <section class="border-t border-border py-12">-->
-<!--        <h2 class="font-mono text-sm text-accent-cyan">&gt;_ projects</h2>-->
-<!--        <div class="mt-6 grid gap-6 sm:grid-cols-2">-->
+      <section class="border-t border-border py-12">
+        <h2 class="font-mono text-sm text-accent-cyan">&gt;_ projects</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2">
 
-<!--          &lt;!&ndash; 一張專案卡：整張是連結。hover 時邊框變綠(hover:border-accent) &ndash;&gt;-->
-<!--          <a-->
-<!--            href="#"-->
-<!--            class="group block rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"-->
-<!--          >-->
-<!--            <h3 class="font-mono text-heading group-hover:text-accent">-->
-<!--              [Project Name]-->
-<!--            </h3>-->
-<!--            <p class="mt-2 text-sm text-muted">[一行專案說明]</p>-->
-<!--          </a>-->
+          <!-- 一張專案卡：整張是連結。hover 時邊框變綠(hover:border-accent) -->
+          <a
+            href="https://github.com/jack-chinho-yao"
+            class="group block rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"
+          >
+            <h3 class="font-mono text-heading group-hover:text-accent">
+              Full-Stack Blog Platform
+            </h3>
+            <p class="mt-2 text-sm text-muted">
+              React.js + Spring Boot app on AWS EC2 with a custom domain, CI/CD, Nginx reverse
+              proxy, and role-based access control.
+            </p>
+          </a>
 
-<!--          <a-->
-<!--            href="#"-->
-<!--            class="group block rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"-->
-<!--          >-->
-<!--            <h3 class="font-mono text-heading group-hover:text-accent">-->
-<!--              [Project Name]-->
-<!--            </h3>-->
-<!--            <p class="mt-2 text-sm text-muted">[一行專案說明]</p>-->
-<!--          </a>-->
-
-<!--        </div>-->
-<!--      </section>-->
+        </div>
+      </section>
 
       <!-- ============ 6. CONTACT ============ -->
       <section class="border-t border-border py-12">
         <h2 class="font-mono text-sm text-accent-cyan">&gt;_ contact</h2>
         <div class="mt-6 flex gap-6 font-mono text-sm">
+          <a
+            href="mailto:jack.chinho.yao@gmail.com"
+            class="text-accent hover:text-accent-cyan"
+            >Email</a
+          >
           <a
             href="https://github.com/jack-chinho-yao"
             class="text-accent hover:text-accent-cyan"
