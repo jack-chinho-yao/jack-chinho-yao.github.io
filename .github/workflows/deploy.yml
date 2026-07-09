@@ -1,0 +1,47 @@
+# 這個工作流程：每次 push 到 main，就自動 build 並部署到 GitHub Pages
+name: Deploy to GitHub Pages
+
+# 觸發條件
+on:
+  push:
+    branches: [main]      # push 到 main 分支時自動跑
+  workflow_dispatch:      # 也允許在 GitHub 網頁上手動點按鈕觸發
+
+# 權限：GitHub Pages 部署需要這三個
+permissions:
+  contents: read          # 讀取你的程式碼
+  pages: write            # 寫入 Pages
+  id-token: write         # 部署身分驗證用
+
+# 同一時間只跑一個部署，新的 push 進來就取消還在跑的舊的
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  # 第一個 job：build，把網站打包成靜態檔
+  build:
+    runs-on: ubuntu-latest          # 用 GitHub 提供的 Linux 機器
+    steps:
+      - uses: actions/checkout@v4   # 把你的 repo 抓下來
+      - uses: actions/setup-node@v4 # 裝 Node
+        with:
+          node-version: 20
+          cache: npm                # 快取 npm，之後跑更快
+      - run: npm ci                 # 依 package-lock 精準安裝依賴
+      - run: npm run build          # 執行 vite build → 產生 dist/
+      - uses: actions/configure-pages@v5      # 準備 Pages 環境
+      - uses: actions/upload-pages-artifact@v3 # 把 dist/ 上傳成部署產物
+        with:
+          path: dist                # Vite 預設輸出資料夾就是 dist
+
+  # 第二個 job：deploy，把上面的產物發佈上線
+  deploy:
+    needs: build                    # 等 build 成功才跑
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}  # 部署後的網址
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4  # 正式部署

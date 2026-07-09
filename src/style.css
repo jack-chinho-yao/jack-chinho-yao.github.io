@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* 配色：定義成 --color-* 後，Tailwind 會自動生成對應 utility class */
+  --color-background: #111111;   /* 用法：bg-background */
+  --color-surface:    #1a1a1a;   /* 用法：bg-surface   */
+  --color-border:     #2a2a2a;   /* 用法：border-border */
+  --color-heading:    #ffffff;   /* 用法：text-heading */
+  --color-body:       #cccccc;   /* 用法：text-body    */
+  --color-muted:      #888888;   /* 用法：text-muted   */
+  --color-accent:     #00ffab;   /* 綠：text-accent / bg-accent */
+  --color-accent-cyan:#00e5ff;   /* 青：text-accent-cyan */
+
+  /* 字型：定義後可用 font-mono / font-sans */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 閃爍游標動畫：HTML 裡 class="cursor" 的元素會套用。
+   1 秒一循環，前半顯示、後半隱藏，step-end 讓它是「跳」不是「淡」。 */
+@keyframes blink {
+  0%, 50%      { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
